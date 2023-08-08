@@ -14,7 +14,7 @@ RUN yarn build
 
 # Prepare nginx
 FROM nginx:1.24.0-alpine
-COPY --from=dist /app/web-build /usr/share/nginx/html
+COPY --from=build /app/web-build /usr/share/nginx/html
 # RUN rm /etc/nginx/conf.d/default.conf
 # COPY nginx/nginx.conf /etc/nginx/conf.d
 
